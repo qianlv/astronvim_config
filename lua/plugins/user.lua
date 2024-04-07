@@ -42,4 +42,12 @@ return {
     "Mofiqul/dracula.nvim",
     name = "dracula",
   },
+
+  {
+    "rcarriga/nvim-notify",
+    opts = function(_, opts)
+      opts.background_colour = "#000000"
+      return opts
+    end,
+  },
 }

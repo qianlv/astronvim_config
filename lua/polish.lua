@@ -3,7 +3,7 @@
 -- fit in the normal config locations above can go here
 
 -- Set up custom filetypes
--- vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])
+vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   desc = "Lazy load clipboard",
   once = true,

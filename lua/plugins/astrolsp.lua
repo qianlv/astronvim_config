@@ -20,7 +20,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -92,57 +92,6 @@ return {
         },
         single_file_support = true,
       },
-      rust_analyzer = {
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              loadOutDirsFromCheck = true,
-            },
-            -- checkOnSave = {
-            --   command = "clippy",
-            --   allFeatures = true,
-            --   extraArgs = { "--no-deps" },
-            -- },
-            procMacro = {
-              enable = true,
-            },
-            experimental = {
-              procAttrMacros = true,
-            },
-            -- https://github.com/AstroNvim/AstroNvim/issues/1225
-            completion = {
-              postfix = {
-                enable = false,
-              },
-            },
-          },
-        },
-      },
-      -- -- pyright = function()
-      --   return {
-      --     root_dir = require("lspconfig.util").root_pattern(
-      --       "pyproject.toml",
-      --       "*.py",
-      --       "setup.cfg",
-      --       "requirements.txt",
-      --       ".git"
-      --     ),
-      --   }
-      -- end,
-      -- racket_lsp = function()
-      --   return {
-      --     cmd = { "/usr/bin/racket", "--lib", "racket-langserver" },
-      --     filetypes = { "racket" },
-      --     root_dir = require("lspconfig.util").root_pattern("*.rkt", ".git"),
-      --   }
-      -- end,
-      -- asm_lsp = function()
-      --   return {
-      --     cmd = { "asm-lsp" },
-      --     filetypes = { "asm" },
-      --     root_dir = require("lspconfig.util").root_pattern("*.asm", "*.s", "*.S", ".git"),
-      --   }
-      -- end,
     },
     -- customize how language servers are attached
     handlers = {

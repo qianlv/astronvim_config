@@ -29,14 +29,9 @@ return {
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         wrap = false, -- sets vim.opt.wrap
-        -- cmdheight = 1,
-        listchars = { tab = "»·", trail = "·", extends = "…", precedes = "…", nbsp = "␣" },
         list = true,
         foldcolumn = "0",
         signcolumn = "yes",
-        -- tabstop = 4,
-        -- shiftwidth = 4,
-        -- softtabstop = 4,
         smarttab = true,
         expandtab = true,
         smartindent = true,
@@ -75,10 +70,6 @@ return {
         ["<Cr>"] = {
           function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Comment line",
-        },
-
-        ["<esc>"] = {
-          "<cmd>nohl<cr>",
         },
       },
       v = {
