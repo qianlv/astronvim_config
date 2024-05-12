@@ -18,23 +18,31 @@ return {
     end,
   },
 
-  { import = "astrocommunity.completion.cmp-cmdline" },
-  { import = "astrocommunity.indent.mini-indentscope" },
+  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = {"80", "100", "120"}
+    }
+  },
   { import = "astrocommunity.color.transparent-nvim" },
-
-  { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-
+  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
+  { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.indent.mini-indentscope" },
+  { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
 
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.python-ruff" },
-  { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
 }

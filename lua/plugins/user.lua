@@ -41,6 +41,11 @@ return {
   {
     "Mofiqul/dracula.nvim",
     name = "dracula",
+    opts = function(_, opts)
+      -- opts.transparent_bg = true
+      opts.italic_comments = true
+      return opts
+    end,
   },
 
   {
@@ -49,5 +54,10 @@ return {
       opts.background_colour = "#000000"
       return opts
     end,
+  },
+
+  {
+    'hardhackerlabs/theme-vim',
+    name = 'theme-vim',
   },
 }
