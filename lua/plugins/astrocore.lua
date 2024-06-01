@@ -1,3 +1,4 @@
+-- cspell: disable
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -37,7 +38,7 @@ return {
         smartindent = true,
         autoindent = true,
         backspace = { "indent", "eol", "start" },
-        mouse = "", -- forbid mouse
+        mouse = "a", -- set mouse
         mps = vim.opt.mps + { "<:>" },
         clipboard = "",
         background = "dark",

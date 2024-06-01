@@ -1,3 +1,4 @@
+-- cspell: disable
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCommunity: import any community modules here
@@ -25,6 +26,7 @@ return {
       colorcolumn = {"80", "100", "120"}
     }
   },
+
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
@@ -35,6 +37,7 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
 
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.java" },
