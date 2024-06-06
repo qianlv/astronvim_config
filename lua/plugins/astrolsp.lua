@@ -1,3 +1,4 @@
+-- cspell: disable
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -65,7 +66,7 @@ return {
           "--cross-file-rename",
           "--enable-config",
           -- "--fallback-style=Webkit",
-          "--fallback-style=Google",
+          -- "--fallback-style=Google",
         },
         fallbackFlags = {
           "-pedantic",
@@ -87,7 +88,6 @@ return {
           "-fuse-ld=lld",
           "-fsanitize=address",
           "-fsanitize=undefined",
-          -- "-stdlib=libc++",
           "-std=c++20",
         },
         single_file_support = true,
