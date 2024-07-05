@@ -1,3 +1,4 @@
+-- cspell: disable
 -- Customize None-ls sources
 
 ---@type LazySpec
@@ -19,8 +20,8 @@ return {
       -- null_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.prettier,
       null_ls.builtins.hover.dictionary,
-      cspell.diagnostics,
-      cspell.code_actions,
+      -- cspell.diagnostics,
+      -- cspell.code_actions,
     }
     return config -- return final config table
   end,

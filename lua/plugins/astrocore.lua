@@ -38,7 +38,7 @@ return {
         smartindent = true,
         autoindent = true,
         backspace = { "indent", "eol", "start" },
-        mouse = "a", -- set mouse
+        mouse = "", -- set mouse
         mps = vim.opt.mps + { "<:>" },
         clipboard = "",
         background = "dark",

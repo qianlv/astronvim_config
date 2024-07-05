@@ -8,33 +8,20 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
-  {
-    "zbirenbaum/copilot.lua",
-    opts = function(_, opts)
-      opts.filetypes = {
-        markdown = true,
-      }
-      return opts
-    end,
-  },
 
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = {
-      colorcolumn = {"80", "100", "120"}
-    }
-  },
-
   { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.completion.cmp-calc" },
   { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.lsp.nvim-lsp-endhints" },
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
@@ -50,4 +37,22 @@ return {
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
+
+  {
+    "zbirenbaum/copilot.lua",
+    opts = function(_, opts)
+      opts.filetypes = {
+        markdown = true,
+      }
+      return opts
+    end,
+  },
+
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = {"80", "100", "120"}
+    }
+  },
+
 }

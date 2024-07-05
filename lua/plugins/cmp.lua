@@ -1,7 +1,7 @@
+-- cspell: disable
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "hrsh7th/cmp-calc",
     {
       "uga-rosa/cmp-dictionary",
       config = function()
@@ -22,7 +22,6 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local sources = {
-      { name = "calc" },
       {
         name = "dictionary",
         keyword_length = 2,
