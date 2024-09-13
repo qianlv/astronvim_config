@@ -16,12 +16,15 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
+  { import = "astrocommunity.editing-support.vim-doge" },
   { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
+  { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-endhints" },
-  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+  -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
@@ -51,8 +54,7 @@ return {
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
-      colorcolumn = {"80", "100", "120"}
-    }
+      colorcolumn = { "80", "100", "120" },
+    },
   },
-
 }

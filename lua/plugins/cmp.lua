@@ -17,6 +17,7 @@ return {
         }
       end,
     },
+    -- "hrsh7th/cmp-nvim-lsp-signature-help",
   },
 
   opts = function(_, opts)
@@ -27,6 +28,9 @@ return {
         keyword_length = 2,
         priority = 300,
       },
+      -- {
+      --   name = "nvim_lsp_signature_help",
+      -- }
     }
 
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, sources))

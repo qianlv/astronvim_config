@@ -40,7 +40,7 @@ return {
         backspace = { "indent", "eol", "start" },
         mouse = "", -- set mouse
         mps = vim.opt.mps + { "<:>" },
-        clipboard = "",
+        clipboard = "unnamedplus",
         background = "dark",
       },
       g = { -- vim.g.<key>
@@ -49,7 +49,7 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
         -- icons_enabled = true,
         diagnostics_mode = 1,
-        python3_host_prog = "/usr/bin/python3",
+        -- python3_host_prog = "/usr/bin/python3",
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -72,6 +72,16 @@ return {
           function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Comment line",
         },
+        ["<leader>um"] = {
+          function()
+            if vim.o.mouse == "" then
+              vim.o.mouse = "a"
+            else
+              vim.o.mouse = ""
+            end
+          end,
+          desc = "Toggle mouse",
+        }
       },
       v = {
         ["<Cr>"] = {
