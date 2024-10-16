@@ -37,13 +37,16 @@ return {
         expandtab = true,
         smartindent = true,
         autoindent = true,
+        tabstop = 2,
+        shiftwidth = 2,
+        softtabstop = 2,
         backspace = { "indent", "eol", "start" },
         mouse = "", -- set mouse
         mps = vim.opt.mps + { "<:>" },
         clipboard = "unnamedplus",
         background = "dark",
       },
-      g = { -- vim.g.<key>
+     g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
@@ -68,10 +71,10 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
-        ["<Cr>"] = {
-          function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
-          desc = "Comment line",
-        },
+        -- ["<Cr>"] = {
+        --   function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+        --   desc = "Comment line",
+        -- },
         ["<leader>um"] = {
           function()
             if vim.o.mouse == "" then

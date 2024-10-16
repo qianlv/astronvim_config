@@ -10,10 +10,10 @@ return {
           paths = { "/home/qianlv/.config/english.dict" },
           exact_length = 2,
           first_case_insensitive = true,
-          document = {
-            enable = true,
-            command = { "wn", "${label}", "-over" },
-          },
+          -- document = {
+          --   enable = true,
+          --   command = { "wn", "${label}", "-over" },
+          -- },
         }
       end,
     },
