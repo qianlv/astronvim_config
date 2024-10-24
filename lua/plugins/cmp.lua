@@ -23,11 +23,11 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local sources = {
-      {
-        name = "dictionary",
-        keyword_length = 2,
-        priority = 300,
-      },
+      -- {
+      --   name = "dictionary",
+      --   keyword_length = 2,
+      --   priority = 300,
+      -- },
       -- {
       --   name = "nvim_lsp_signature_help",
       -- }
