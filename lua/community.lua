@@ -23,9 +23,10 @@ return {
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  -- { import = "astrocommunity.lsp.nvim-lsp-endhints" },
+  { import = "astrocommunity.lsp.nvim-lsp-endhints" },
   { import = "astrocommunity.programming-language-support.rest-nvim" },
   -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+  { import = "astrocommunity.split-and-window.colorful-winsep-nvim" },
 
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
