@@ -45,6 +45,7 @@ return {
         mps = vim.opt.mps + { "<:>" },
         clipboard = "unnamedplus",
         background = "dark",
+        jumpoptions = "stack",
       },
      g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

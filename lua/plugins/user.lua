@@ -61,4 +61,14 @@ return {
     'hardhackerlabs/theme-vim',
     name = 'theme-vim',
   },
+
+  {
+    "keaising/im-select.nvim",
+    config = function()
+      require("im_select").setup({
+        default_im_select = "1033",
+        default_command = "/mnt/c/im-select.exe"
+      })
+    end
+  }
 }
