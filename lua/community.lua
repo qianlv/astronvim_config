@@ -29,7 +29,6 @@ return {
   -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.split-and-window.colorful-winsep-nvim" },
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
-  { import = "astrocommunity.git.diffview-nvim" },
 
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
