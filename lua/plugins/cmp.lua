@@ -25,12 +25,12 @@ return {
     },
     {
       "milanglacier/minuet-ai.nvim",
-    }
+    },
   },
 
   opts = function(_, opts)
     local cmp = require "cmp"
-    local minuet = require('minuet.virtualtext')
+    local minuet = require "minuet.virtualtext"
     local snip_status_ok, luasnip = pcall(require, "luasnip")
     if not snip_status_ok then return end
 
@@ -49,19 +49,19 @@ return {
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, sources))
 
     if not opts.mapping then opts.mapping = {} end
-        opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-          if minuet.action.is_visible() then
-            vim.defer_fn(minuet.action.accept, 30)
-          elseif cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          elseif has_words_before() then
-            cmp.complete()
-          else
-            fallback()
-          end
-        end, { "i", "s" })
+    opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+      if minuet.action.is_visible() then
+        vim.defer_fn(minuet.action.accept, 30)
+      elseif cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" })
 
     opts.mapping["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" })
     opts.mapping["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" })
