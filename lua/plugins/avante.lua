@@ -15,7 +15,16 @@ return {
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
         },
+        bytes = {
+          __inherited_from = "openai",
+          api_key_name = "BYTE_KEY",
+          endpoint = "https://ark.cn-beijing.volces.com/api/v3",
+          model = "deepseek-r1-250120",
+        }
       },
+      -- behaviour = {
+      --   auto_suggestions = true,
+      -- },
       mappings = {
         submit = {
           insert = "<C-i>",
