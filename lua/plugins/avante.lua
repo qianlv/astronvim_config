@@ -11,13 +11,13 @@ return {
       vendors = {
         deepseek = {
           __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_KEY",
+          api_key_name = "DEEPSEEK_API_KEY",
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
         },
         bytes = {
           __inherited_from = "openai",
-          api_key_name = "BYTE_KEY",
+          api_key_name = "BYTE_API_KEY",
           endpoint = "https://ark.cn-beijing.volces.com/api/v3",
           model = "deepseek-r1-250120",
         }
@@ -27,7 +27,7 @@ return {
       -- },
       mappings = {
         submit = {
-          insert = "<C-i>",
+          insert = "<C-m>",
         }
       },
     },

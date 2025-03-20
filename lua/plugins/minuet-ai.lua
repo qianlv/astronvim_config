@@ -72,39 +72,42 @@ return {
 
   {
     "milanglacier/minuet-ai.nvim",
+    enabled = true,
     config = function()
       require("minuet").setup {
-        provider = "openai_compatible",
+        provider = "openai_fim_compatible",
+        context_window = 512,
         provider_options = {
-          openai_compatible = {
-            -- end_point = "https://api.deepseek.com/chat/completions",
-            -- api_key = "DEEPSEEK_KEY",
-            -- name = "DEPPSEEK_V3",
-            -- model = "deepseek-chat",
-
-            -- end_point = "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
-            -- api_key = "BYTE_KEY",
-            -- name = "BYTE",
-            -- model = "deepseek-v3-241226",
-            -- model = "doubao-1-5-lite-32k-250115",
-            -- model = "deepseek-r1-distill-qwen-7b-250120",
-
-            end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
-            api_key = "ALI_KEY",
+          -- 阿里FIM文档
+          -- https://help.aliyun.com/zh/model-studio/user-guide/qwen-coder?scm=20140722.S_help%40%40%E6%96%87%E6%A1%A3%40%402850166.S_BB1%40bl%2BRQW%40ag0%2BBB2%40ag0%2Bos0.ID_2850166-RL_fim-LOC_doc%7EUND%7Eab-OR_ser-PAR1_2102029b17424418065905787d3d69-V_4-P0_0-P1_0&spm=a2c4g.11186623.help-search.i10#ee2bb51009n58
+          openai_fim_compatible = {
+            end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/completions",
+            api_key = "ALI_API_KEY",
             name = "ALI",
             -- model = "qwen2.5-vl-7b-instruct",
-            model = "qwen2.5-vl-72b-instruct",
+            -- model = "qwen2.5-vl-72b-instruct",
+            -- model = "qwen2.5-coder-32b-instruct",
+            model = "qwen2.5-coder-32b-instruct",
 
             stream = true,
+            template = {
+              prompt = function(context_before_cursor, context_after_cursor)
+                return "<|fim_prefix|>"
+                  .. context_before_cursor
+                  .. "<|fim_suffix|>"
+                  .. context_after_cursor
+                  .. "<|fim_middle|>"
+              end,
+              suffix = false,
+            },
             optional = {
-              max_tokens = 512,
+              max_tokens = 2048,
               top_p = 0.9,
             },
           },
         },
-
         virtualtext = {
-          auto_trigger_ft = { 'python', 'javascript', 'typescript', 'lua', 'c', 'cpp', 'rust', 'markdown' },
+          auto_trigger_ft = { "python", "javascript", "typescript", "lua", "c", "cpp", "rust", "markdown" },
           keymap = {
             -- 接受完整补全
             accept = "<A-a>",

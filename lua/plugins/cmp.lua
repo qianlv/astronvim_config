@@ -30,16 +30,15 @@ return {
 
   opts = function(_, opts)
     local cmp = require "cmp"
-    local minuet = require "minuet.virtualtext"
+    local minuet_status_ok, minuet = pcall(require, "minuet.virtualtext")
     local snip_status_ok, luasnip = pcall(require, "luasnip")
-    if not snip_status_ok then return end
+    local llm_status_ok, llm = pcall(require, 'llm.completion')
 
     local sources = {
       {
         name = "dictionary",
         keyword_length = 2,
       },
-      -- { name = 'minuet' },
     }
 
     opts.performance = {
@@ -50,11 +49,13 @@ return {
 
     if not opts.mapping then opts.mapping = {} end
     opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-      if minuet.action.is_visible() then
+      if minuet_status_ok and minuet.action.is_visible() then
         vim.defer_fn(minuet.action.accept, 30)
+      elseif llm_status_ok and llm.shown_suggestion ~= nil then
+        llm.complete()
       elseif cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
+      elseif snip_status_ok and luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
@@ -65,7 +66,6 @@ return {
 
     opts.mapping["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" })
     opts.mapping["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" })
-    -- opts.mapping["<A-y>"] = require('minuet').make_cmp_map()
 
     return opts
   end,
