@@ -120,7 +120,7 @@ return {
               top_p = 0.9,
               seed = 1024,
             },
-          }
+          },
         },
         virtualtext = {
           auto_trigger_ft = { "python", "javascript", "typescript", "lua", "c", "cpp", "rust", "markdown" },
