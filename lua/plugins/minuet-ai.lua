@@ -75,7 +75,8 @@ return {
     enabled = true,
     config = function()
       require("minuet").setup {
-        provider = "openai_fim_compatible",
+        provider = "openai_compatible",
+        -- provider = "openai_fim_compatible",
         context_window = 512,
         provider_options = {
           -- 阿里FIM文档
@@ -84,9 +85,8 @@ return {
             end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/completions",
             api_key = "ALI_API_KEY",
             name = "ALI",
-            -- model = "qwen2.5-vl-7b-instruct",
-            -- model = "qwen2.5-vl-72b-instruct",
-            -- model = "qwen2.5-coder-32b-instruct",
+            -- model = "qwen2.5-coder-7b-instruct",
+            -- model = "qwen2.5-coder-14b-instruct",
             model = "qwen2.5-coder-32b-instruct",
 
             stream = true,
@@ -101,10 +101,26 @@ return {
               suffix = false,
             },
             optional = {
-              max_tokens = 2048,
+              max_tokens = 256,
               top_p = 0.9,
+              seed = 1024,
             },
           },
+          openai_compatible = {
+            end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+            api_key = "ALI_API_KEY",
+            name = "ALI",
+            -- model = "qwen2.5-coder-7b-instruct",
+            -- model = "qwen2.5-coder-14b-instruct",
+            model = "qwen2.5-coder-32b-instruct",
+
+            stream = true,
+            optional = {
+              max_tokens = 256,
+              top_p = 0.9,
+              seed = 1024,
+            },
+          }
         },
         virtualtext = {
           auto_trigger_ft = { "python", "javascript", "typescript", "lua", "c", "cpp", "rust", "markdown" },

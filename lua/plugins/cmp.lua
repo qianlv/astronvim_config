@@ -32,7 +32,7 @@ return {
     local cmp = require "cmp"
     local minuet_status_ok, minuet = pcall(require, "minuet.virtualtext")
     local snip_status_ok, luasnip = pcall(require, "luasnip")
-    local llm_status_ok, llm = pcall(require, 'llm.completion')
+    -- local llm_status_ok, llm = pcall(require, 'llm.completion')
 
     local sources = {
       {
@@ -41,9 +41,9 @@ return {
       },
     }
 
-    opts.performance = {
-      fetching_timeout = 2000,
-    }
+    -- opts.performance = {
+    --   fetching_timeout = 2000,
+    -- }
 
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, sources))
 
@@ -51,8 +51,8 @@ return {
     opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
       if minuet_status_ok and minuet.action.is_visible() then
         vim.defer_fn(minuet.action.accept, 30)
-      elseif llm_status_ok and llm.shown_suggestion ~= nil then
-        llm.complete()
+      -- elseif llm_status_ok and llm.shown_suggestion ~= nil then
+      --   llm.complete()
       elseif cmp.visible() then
         cmp.select_next_item()
       elseif snip_status_ok and luasnip.expand_or_jumpable() then
