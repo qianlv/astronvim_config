@@ -72,7 +72,7 @@ return {
 
   {
     "milanglacier/minuet-ai.nvim",
-    enabled = true,
+    enabled = false,
     config = function()
       require("minuet").setup {
         provider = "openai_compatible",
@@ -84,22 +84,22 @@ return {
           openai_fim_compatible = {
             end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/completions",
             api_key = "ALI_API_KEY",
-            name = "ALI",
             -- model = "qwen2.5-coder-7b-instruct",
             -- model = "qwen2.5-coder-14b-instruct",
             model = "qwen2.5-coder-32b-instruct",
+            name = "ALI",
 
             stream = true,
-            template = {
-              prompt = function(context_before_cursor, context_after_cursor)
-                return "<|fim_prefix|>"
-                  .. context_before_cursor
-                  .. "<|fim_suffix|>"
-                  .. context_after_cursor
-                  .. "<|fim_middle|>"
-              end,
-              suffix = false,
-            },
+            -- template = {
+            --   prompt = function(context_before_cursor, context_after_cursor)
+            --     return "<|fim_prefix|>"
+            --       .. context_before_cursor
+            --       .. "<|fim_suffix|>"
+            --       .. context_after_cursor
+            --       .. "<|fim_middle|>"
+            --   end,
+            --   suffix = false,
+            -- },
             optional = {
               max_tokens = 256,
               top_p = 0.9,
@@ -110,9 +110,11 @@ return {
             end_point = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
             api_key = "ALI_API_KEY",
             name = "ALI",
+            model = "deepseek-v3",
             -- model = "qwen2.5-coder-7b-instruct",
             -- model = "qwen2.5-coder-14b-instruct",
-            model = "qwen2.5-coder-32b-instruct",
+            -- model = "qwen2.5-coder-32b-instruct",
+            -- model = "deepseek-r1-distill-qwen-32b",
 
             stream = true,
             optional = {
@@ -123,7 +125,7 @@ return {
           },
         },
         virtualtext = {
-          auto_trigger_ft = { "python", "javascript", "typescript", "lua", "c", "cpp", "rust", "markdown" },
+          auto_trigger_ft = { "python", "javascript", "typescript", "lua", "c", "cpp", "rust", "markdown", "java" },
           keymap = {
             -- 接受完整补全
             accept = "<A-a>",

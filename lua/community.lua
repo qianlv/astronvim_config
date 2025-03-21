@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.completion.cmp-calc" },
   { import = "astrocommunity.completion.cmp-cmdline" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
@@ -41,15 +41,15 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.full-dadbod" },
 
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   opts = function(_, opts)
-  --     opts.filetypes = {
-  --       markdown = true,
-  --     }
-  --     return opts
-  --   end,
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = function(_, opts)
+      opts.filetypes = {
+        markdown = true,
+      }
+      return opts
+    end,
+  },
 
   {
     "m4xshen/smartcolumn.nvim",

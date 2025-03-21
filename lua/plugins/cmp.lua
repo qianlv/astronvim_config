@@ -30,8 +30,8 @@ return {
 
   opts = function(_, opts)
     local cmp = require "cmp"
-    local minuet_status_ok, minuet = pcall(require, "minuet.virtualtext")
-    local snip_status_ok, luasnip = pcall(require, "luasnip")
+    -- local minuet_status_ok, minuet = pcall(require, "minuet.virtualtext")
+    -- local snip_status_ok, luasnip = pcall(require, "luasnip")
     -- local llm_status_ok, llm = pcall(require, 'llm.completion')
 
     local sources = {
@@ -47,22 +47,22 @@ return {
 
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, sources))
 
-    if not opts.mapping then opts.mapping = {} end
-    opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-      if minuet_status_ok and minuet.action.is_visible() then
-        vim.defer_fn(minuet.action.accept, 30)
-      -- elseif llm_status_ok and llm.shown_suggestion ~= nil then
-      --   llm.complete()
-      elseif cmp.visible() then
-        cmp.select_next_item()
-      elseif snip_status_ok and luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" })
+    -- if not opts.mapping then opts.mapping = {} end
+    -- opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+    --   if minuet_status_ok and minuet.action.is_visible() then
+    --     vim.defer_fn(minuet.action.accept, 30)
+    --   -- elseif llm_status_ok and llm.shown_suggestion ~= nil then
+    --   --   llm.complete()
+    --   elseif cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif snip_status_ok and luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   elseif has_words_before() then
+    --     cmp.complete()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { "i", "s" })
 
     opts.mapping["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" })
     opts.mapping["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" })

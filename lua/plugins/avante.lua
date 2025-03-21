@@ -20,7 +20,13 @@ return {
           api_key_name = "BYTE_API_KEY",
           endpoint = "https://ark.cn-beijing.volces.com/api/v3",
           model = "deepseek-r1-250120",
-        }
+        },
+        qianwen = {
+          __inherited_from = "openai",
+          api_key_name = "ALI_API_KEY",
+          endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          model = "qwen-coder-plus-latest",
+        },
       },
       -- behaviour = {
       --   auto_suggestions = true,
@@ -28,7 +34,7 @@ return {
       mappings = {
         submit = {
           insert = "<C-m>",
-        }
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
