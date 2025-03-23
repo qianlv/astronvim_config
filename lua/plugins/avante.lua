@@ -7,7 +7,7 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "deepseek",
+      provider = "gemini",
       vendors = {
         deepseek = {
           __inherited_from = "openai",
@@ -27,6 +27,10 @@ return {
           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
           model = "qwen-coder-plus-latest",
         },
+        -- gemini = {
+        --   endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
+        --   api_key_name = "GEMINI_API_KEY",
+        -- }
       },
       -- behaviour = {
       --   auto_suggestions = true,
