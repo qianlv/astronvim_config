@@ -1,4 +1,3 @@
--- cspell: disable
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -11,6 +10,7 @@ return {
   opts = {
     -- change colorscheme
     colorscheme = "gruvbox-material",
+    -- colorscheme = "astrodark",
     -- colorscheme = "dracula",
     -- colorscheme = "hardhacker",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
@@ -18,7 +18,7 @@ return {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
       },
-      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
+      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
       },
     },

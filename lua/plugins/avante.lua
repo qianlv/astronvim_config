@@ -7,30 +7,32 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "gemini",
+      provider = "deepseek",
       vendors = {
         deepseek = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
+          max_tokens = 8192,
         },
         bytes = {
           __inherited_from = "openai",
           api_key_name = "BYTE_API_KEY",
           endpoint = "https://ark.cn-beijing.volces.com/api/v3",
           model = "deepseek-r1-250120",
+          max_tokens = 4096,
         },
         qianwen = {
           __inherited_from = "openai",
           api_key_name = "ALI_API_KEY",
           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
           model = "qwen-coder-plus-latest",
+          max_tokens = 4096,
         },
-        -- gemini = {
-        --   endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
-        --   api_key_name = "GEMINI_API_KEY",
-        -- }
+        gemini = {
+          model = 'gemini-2.0-flash',
+        }
       },
       -- behaviour = {
       --   auto_suggestions = true,
@@ -40,6 +42,11 @@ return {
           insert = "<C-m>",
         },
       },
+      windows = {
+        ask = {
+          floating = false,
+        }
+      }
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",

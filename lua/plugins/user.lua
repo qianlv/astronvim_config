@@ -7,23 +7,6 @@
 ---@type LazySpec
 return {
   {
-    "NvChad/nvim-colorizer.lua",
-    opts = function(_, opts)
-      opts.filetypes = {
-        "*",
-        css = { names = true, css = true, css_fn = true },
-        html = { names = true },
-      }
-      return opts
-    end,
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-  },
-
-  {
     "sainnhe/gruvbox-material",
     config = function()
       vim.g.gruvbox_material_foreground = "mix"
@@ -45,14 +28,6 @@ return {
     opts = function(_, opts)
       -- opts.transparent_bg = true
       opts.italic_comments = true
-      return opts
-    end,
-  },
-
-  {
-    "rcarriga/nvim-notify",
-    opts = function(_, opts)
-      opts.background_colour = "#000000"
       return opts
     end,
   },
