@@ -9,8 +9,8 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.completion.cmp-calc" },
-  { import = "astrocommunity.completion.cmp-cmdline" },
+  -- { import = "astrocommunity.completion.cmp-calc" },
+  -- { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
@@ -52,4 +52,5 @@ return {
       colorcolumn = { "80", "100", "120" },
     },
   },
+
 }

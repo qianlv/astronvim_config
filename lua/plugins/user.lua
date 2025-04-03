@@ -26,24 +26,25 @@ return {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     opts = function(_, opts)
-      -- opts.transparent_bg = true
       opts.italic_comments = true
       return opts
     end,
   },
 
   {
-    'hardhackerlabs/theme-vim',
-    name = 'theme-vim',
+    "hardhackerlabs/theme-vim",
+    name = "theme-vim",
   },
 
   {
     "keaising/im-select.nvim",
     config = function()
-      require("im_select").setup({
+      require("im_select").setup {
         default_im_select = "1033",
-        default_command = "/mnt/c/im-select.exe"
-      })
-    end
-  }
+        default_command = "/mnt/c/im-select.exe",
+      }
+    end,
+  },
+
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
 }
