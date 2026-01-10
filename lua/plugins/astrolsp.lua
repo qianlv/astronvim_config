@@ -99,6 +99,15 @@ return {
         },
         single_file_support = true,
       },
+      gopls = {
+        settings = {
+          gopls = {
+            analyses = {
+              ST1003 = false, -- 禁用 ST1003 诊断（变量命名风格检查）
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
