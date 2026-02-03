@@ -6,45 +6,34 @@
 
 ---@type LazySpec
 return {
-  {
-    "sainnhe/gruvbox-material",
-    config = function()
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.g.gruvbox_material_background = "medium"
-      vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_ui_contrast = "high"
-      vim.g.gruvbox_material_enable_bold = 1
-      vim.g.gruvbox_material_enable_italic = 1
-      vim.g.gruvbox_material_disable_italic_comment = 0
-      vim.g.gruvbox_material_diagnostic_text_highlight = 1
-      vim.g.gruvbox_material_diagnostic_line_highlight = 1
-      vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-    end,
-  },
 
-  {
-    "Mofiqul/dracula.nvim",
-    name = "dracula",
-    opts = function(_, opts)
-      opts.italic_comments = true
-      return opts
-    end,
-  },
-
-  {
-    "hardhackerlabs/theme-vim",
-    name = "theme-vim",
-  },
-
-  {
-    "keaising/im-select.nvim",
-    config = function()
-      require("im_select").setup {
-        default_im_select = "1033",
-        default_command = "/mnt/c/im-select.exe",
-      }
-    end,
-  },
+  -- {
+  --   "keaising/im-select.nvim",
+  --   config = function()
+  --     require("im_select").setup {
+  --       default_im_select = "1033",
+  --       default_command = "/mnt/c/im-select.exe",
+  --     }
+  --   end,
+  -- },
 
   { "akinsho/git-conflict.nvim", version = "*", config = true },
+
+  -- Supermaven AI 代码补全
+  {
+    "supermaven-inc/supermaven-nvim",
+    event = "VeryLazy",
+    opts = {
+      keymaps = {
+        accept_suggestion = nil, -- 禁用默认的 Tab 绑定，使用 blink.cmp 的 keymap
+        clear_suggestion = "<C-]>",
+        accept_word = "<C-j>",
+      },
+      ignore_filetypes = {},
+      color = {
+        suggestion_color = "#6e7681",
+        cterm = 244,
+      },
+    },
+  },
 }
