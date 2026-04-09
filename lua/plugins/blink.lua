@@ -5,7 +5,7 @@ end
 
 return {
   {
-    "Saghen/blink.cmp",
+    "saghen/blink.cmp",
     build = 'cargo build --release',
     opts = function(_, opts)
       if not opts.keymap then opts.keymap = {} end
@@ -59,7 +59,7 @@ return {
     lazy = true,
     specs = {
       {
-        "Saghen/blink.cmp",
+        "saghen/blink.cmp",
         optional = true,
         opts = {
           sources = {
