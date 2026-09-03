@@ -38,19 +38,6 @@ return {
       --   implementation = "lua"
       -- }
 
-      -- opts.sources = vim.tbl_deep_extend("keep", opts.sources or {}, {
-      --   default = {},
-      --   providers = {
-      --     avante = {
-      --       module = "blink-cmp-avante",
-      --       name = "Avante",
-      --       opts = {
-      --         -- options for blink-cmp-avante
-      --       },
-      --     },
-      --   },
-      -- })
-
       return opts
     end,
   },
